@@ -1,0 +1,36 @@
+@import url('../../settings/config.less');
+
+.Section {
+	position: relative;
+	width: 100%;
+
+	@apply pl-14 pr-28 xl:pl-28 xl:pr-48;
+
+	h1 {
+		@apply mt-20 text-2xl;
+	}
+
+	p {
+		@apply text-justify text-base font-light;
+	}
+
+	.more {
+		position: absolute;
+		width: 100%;
+		bottom: -30px;
+	}
+}
+
+@media only screen and (max-width: @MD) {
+	.Section {
+		@apply pl-10 pr-10;
+
+		h1 {
+			@apply text-3xl;
+		}
+
+		p {
+			@apply text-xl;
+		}
+	}
+}

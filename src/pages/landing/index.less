@@ -1,0 +1,24 @@
+.Landing {
+	@apply flex w-full flex-col items-center justify-start;
+
+	p {
+		@apply py-5;
+	}
+
+	.player {
+		background-color: #000;
+		width: 420px;
+
+		@apply my-5 rounded-xl p-3;
+	}
+
+	.ytPlayer {
+		width: 100%;
+
+		@apply py-10;
+
+		iframe {
+			@apply aspect-video;
+		}
+	}
+}

@@ -1,0 +1,318 @@
+@import url('../../settings/config.less');
+
+.Container {
+	@apply flex min-h-screen w-full justify-center;
+
+	& > div {
+		position: relative;
+		width: 100%;
+		min-width: 768px;
+		// max-width: 1680px;
+		overflow: hidden;
+
+		.ribbon-l {
+			position: absolute;
+			width: image-width(@img) * @scale;
+			height: 100%;
+			top: 50px;
+			background-image: url(@img);
+			background-size: 100%;
+			// pointer-events: none;
+
+			z-index: 2;
+			left: -150px;
+
+			@scale: 1;
+			@img: './img/ribbon-l.png';
+
+			& > div {
+				position: absolute;
+				background-size: 100%;
+				background-repeat: no-repeat;
+			}
+
+			& > div:nth-child(1) {
+				left: 365px;
+				top: 0px;
+				width: image-width(@img) * @scale;
+				height: image-height(@img) * @scale;
+				background-image: url(@img);
+
+				animation: r15_o 18s ease-in-out infinite;
+
+				@img: './img/symbols-0.png';
+			}
+
+			& > div:nth-child(2) {
+				left: 2px;
+				top: 54px;
+				width: image-width(@img) * @scale;
+				height: image-height(@img) * @scale;
+				background-image: url(@img);
+
+				animation: r15_o 18s ease-in-out infinite reverse;
+				animation-duration: -10s;
+
+				@img: './img/symbols-1.png';
+			}
+
+			& > div:nth-child(3) {
+				left: 252px;
+				top: 724px;
+				width: image-width(@img) * @scale;
+				height: image-height(@img) * @scale;
+				background-image: url(@img);
+
+				animation: r20_8 20s ease-in-out infinite;
+				animation-duration: -5s;
+
+				@img: './img/symbols-2.png';
+			}
+
+			& > div:nth-child(4) {
+				left: 516px;
+				top: 938px;
+				width: image-width(@img) * @scale;
+				height: image-height(@img) * @scale;
+				background-image: url(@img);
+
+				animation: r20_noX 12s ease-in-out infinite;
+
+				@img: './img/symbols-3.png';
+			}
+
+			& > div:nth-child(5) {
+				left: 207px;
+				top: 1679px;
+				width: image-width(@img) * @scale;
+				height: image-height(@img) * @scale;
+				background-image: url(@img);
+
+				animation: r10_noY 12s ease-in-out infinite reverse;
+
+				@img: './img/symbols-4.png';
+			}
+
+			& > div:nth-child(6) {
+				left: 217px;
+				top: 2329px;
+				width: image-width(@img) * @scale;
+				height: image-height(@img) * @scale;
+
+				&::after {
+					position: absolute;
+					content: '';
+					width: 100%;
+					height: 100%;
+					background-image: url(@img);
+					transform: scale(-1, 1);
+				}
+
+				animation: r15_o 18s ease-in-out infinite reverse;
+				animation-duration: -10s;
+
+				@img: './img/symbol-0.png';
+			}
+
+			&::before {
+				position: absolute;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				background-image: url('./img/ribbon-l-t.png');
+				background-size: 100%;
+				// content: '';
+			}
+		}
+
+		.ribbon-r {
+			position: absolute;
+			width: image-width(@img) * @scale;
+			height: 100%;
+			top: 48px;
+			z-index: 2;
+			right: -110px;
+			// pointer-events: none;
+
+			background-image: url(@img);
+			background-size: 100%;
+
+			@scale: 1;
+			@img: './img/ribbon-r.png';
+
+			& > div {
+				position: absolute;
+				background-size: 100%;
+				background-repeat: no-repeat;
+			}
+
+			& > div:nth-child(1) {
+				left: 0px;
+				top: 0px;
+				width: image-width(@img) * @scale;
+				height: image-height(@img) * @scale;
+				background-image: url(@img);
+
+				animation: r20_8 20s ease-in-out infinite;
+
+				@img: './img/symbol-0.png';
+			}
+
+			& > div:nth-child(2) {
+				left: 71px;
+				top: 881px;
+				width: image-width(@img) * @scale;
+				height: image-height(@img) * @scale;
+				background-image: url(@img);
+
+				animation: r20_noX 12s ease-in-out infinite;
+
+				@img: './img/symbol-1.png';
+			}
+
+			& > div:nth-child(3) {
+				left: -2px;
+				top: 1151px;
+				width: image-width(@img) * @scale;
+				height: image-height(@img) * @scale;
+				background-image: url(@img);
+
+				animation: r20_8 20s ease-in-out infinite;
+				animation-duration: -5s;
+
+				@img: './img/symbol-2.png';
+			}
+
+			& > div:nth-child(4) {
+				left: 138px;
+				top: 1729px;
+				width: image-width(@img) * @scale;
+				height: image-height(@img) * @scale;
+				background-image: url(@img);
+
+				animation: r10_noY 10s ease-in-out infinite;
+
+				@img: './img/symbol-3.png';
+			}
+
+			& > div:nth-child(5) {
+				left: 38px;
+				top: 2179px;
+				width: image-width(@img) * @scale;
+				height: image-height(@img) * @scale;
+
+				&::after {
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					background-image: url(@img);
+					background-size: 100%;
+					transform: scale(-1, 1);
+					content: '';
+				}
+
+				animation: r20_8 15s ease-in-out infinite;
+				animation-duration: -5s;
+
+				@img: './img/symbols-2.png';
+			}
+
+			&::before {
+				position: absolute;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				background-image: url('./img/ribbon-r-t.png');
+				background-size: 100%;
+				// content: '';
+			}
+		}
+
+		&::before {
+			position: absolute;
+			left: 20px;
+			top: 0;
+			width: image-width(@img) * @scale;
+			height: 100%;
+			background-image: url(@img);
+			background-size: 100%;
+			background-repeat: repeat-y;
+			content: '';
+			z-index: 1;
+			background-position-y: 300px;
+
+			@scale: 0.7;
+			@img: './img/left.png';
+		}
+
+		&::after {
+			position: absolute;
+			right: 0;
+			top: 0;
+			z-index: 1;
+			width: image-width(@img) * @scale;
+			height: 100%;
+			background-image: url(@img);
+			background-size: 100%;
+			background-repeat: repeat-y;
+			background-position-y: 300px;
+			content: '';
+
+			@scale: 0.7;
+			@img: './img/right.png';
+		}
+	}
+}
+
+@media only screen and (max-width: @XL) {
+	.Container {
+		& > div {
+			.ribbon-l {
+				left: -410px;
+			}
+
+			.ribbon-r {
+				right: -260px;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: @MD) {
+	.Container {
+		& > div {
+			&::before {
+				left: -147px;
+			}
+
+			.ribbon-l {
+				left: -410px;
+			}
+
+			.ribbon-r {
+				right: -260px;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: @SM) {
+	.Container {
+		& > div {
+			&::before {
+				left: -249px;
+			}
+			&::after {
+				display: none;
+			}
+
+			.ribbon-l {
+				display: none;
+			}
+
+			.ribbon-r {
+				display: none;
+			}
+		}
+	}
+}

@@ -1,0 +1,68 @@
+@import url('../../settings/config.less');
+
+.Header {
+	position: absolute;
+	top: 0;
+	padding-bottom: 300px;
+	width: 100%;
+	z-index: 2;
+
+	& > div {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+
+		@apply flex justify-center;
+
+		.context {
+			position: relative;
+			max-width: 1024px;
+			width: 100%;
+			@apply flex flex-col items-center justify-center space-y-5;
+
+			.logo {
+				margin-top: 20px;
+				width: image-width(@img) * @scale;
+				height: image-height(@img) * @scale;
+				mask-image: url(@img);
+				mask-size: 100%;
+
+				background-color: #fff;
+
+				@scale: 0.8;
+				@img: './img/logo.svg';
+			}
+
+			.hashtag {
+				color: #fff;
+				@apply text-2xl;
+			}
+		}
+
+		&::before {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background-image: url(@img);
+			background-size: 100%;
+			background-position: center bottom;
+			content: '';
+		}
+	}
+
+	@img: './img/bg.svg';
+}
+
+@media only screen and (max-width: @SM) {
+	.Header {
+		padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * 100%);
+		& > div {
+			&::before {
+				height: 100%;
+			}
+		}
+	}
+	@img: './img/bg.svg';
+}
