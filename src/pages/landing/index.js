@@ -128,7 +128,7 @@ const Landing = memo(() => {
 										<iframe
 											width={['504', '268', '410', '528'][width]}
 											height={['284', '151', '231', '297'][width]}
-											src='https://www.youtube.com/embed/Fpz3tH1mjTU?controls=0'
+											src='https://www.youtube.com/embed/O1gh0ieTsws?controls=0'
 											title='YouTube video player'
 											allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
 											allowFullScreen
