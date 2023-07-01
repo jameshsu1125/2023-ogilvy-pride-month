@@ -15,9 +15,9 @@ const Container = memo(({ children }) => {
 					{[...new Array(6).keys()].map((e, i) => (
 						<TweenProvider
 							key={e}
-							initStyle={{ opacity: 0, marginTop: '50px' }}
+							initStyle={{ opacity: 0, marginLeft: '100px' }}
 							tweenStyle={
-								steps === LandingSteps.fadeIn ? { opacity: 1, marginTop: '0px' } : undefined
+								steps === LandingSteps.fadeIn ? { opacity: 1, marginLeft: '0px' } : undefined
 							}
 							options={{ delay: i * 100 }}
 						>
@@ -29,9 +29,9 @@ const Container = memo(({ children }) => {
 					{[...new Array(5).keys()].map((e, i) => (
 						<TweenProvider
 							key={e}
-							initStyle={{ opacity: 0, marginTop: '50px' }}
+							initStyle={{ opacity: 0, marginLeft: '-100px' }}
 							tweenStyle={
-								steps === LandingSteps.fadeIn ? { opacity: 1, marginTop: '0px' } : undefined
+								steps === LandingSteps.fadeIn ? { opacity: 1, marginLeft: '0px' } : undefined
 							}
 							options={{ delay: 50 + i * 200 }}
 						>

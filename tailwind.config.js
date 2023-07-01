@@ -13,7 +13,7 @@ module.exports = {
 			...color,
 			primary: '#d84e4a',
 			secondary: '#e27338',
-			tertiary: '#ff0066',
+			tertiary: '#e4b8ce',
 			quaternary: '#00ff00',
 			backgroundColor: '#98d9e8',
 			textColor: '#231815',
