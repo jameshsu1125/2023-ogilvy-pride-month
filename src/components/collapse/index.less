@@ -1,9 +1,46 @@
 @import url('../../settings/config.less');
 
+.active {
+	&::before {
+		right: 0;
+		bottom: -130px;
+		position: absolute;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+		content: '';
+
+		animation: r30_8 20s ease-in-out infinite;
+
+		@scale: 1;
+		@img: './img/symbol-1.png';
+	}
+}
+
+.active2 {
+	&::before {
+		left: 170px;
+		bottom: -60px;
+		position: absolute;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+		content: '';
+
+		animation: r30_8 20s ease-in-out infinite;
+
+		@scale: 0.5;
+		@img: './img/symbol-1.png';
+	}
+}
+
 .Collapse {
+	position: relative;
 	width: 100%;
 
-	overflow: hidden;
+	// overflow: hidden;
 
 	button {
 		// transition: 0.2s;

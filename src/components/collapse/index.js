@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import './index.less';
 
-const Collapse = ({ children, height = '315px' }) => {
+const Collapse = ({ children, height = '315px', symbol = false, index = 0 }) => {
 	const [state, setState] = useState(false);
 
 	const maxHeight = useMemo(() => {
@@ -9,8 +9,14 @@ const Collapse = ({ children, height = '315px' }) => {
 		return height;
 	}, [state, height]);
 
+	const className = useMemo(() => {
+		const classes = ['Collapse'];
+		if (state && symbol) classes.push(index === 0 ? 'active' : 'active2');
+		return classes.join(' ');
+	}, [symbol, index, state]);
+
 	return (
-		<div className='Collapse'>
+		<div className={className}>
 			<div className='w-full overflow-hidden' style={{ maxHeight }}>
 				{children}
 			</div>

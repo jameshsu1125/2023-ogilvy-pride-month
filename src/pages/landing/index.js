@@ -51,7 +51,7 @@ const Landing = memo(() => {
 				onload={() => {
 					setTimeout(() => {
 						setContext({ type: ACTION.LoadingProcess, state: { fadeOut: true } });
-					}, 3000);
+					}, 1000);
 				}}
 			>
 				<div className='Landing'>
@@ -77,7 +77,7 @@ const Landing = memo(() => {
 									</p>
 								</Collapse>
 								<Blockquote>#LovelsLove</Blockquote>
-								<Collapse height={['431px', '467px', '385px', '385px'][width]}>
+								<Collapse height={['431px', '467px', '385px', '385px'][width]} symbol>
 									<h1>他他篇</h1>
 									<p>
 										『愛不是花一天時間在海邊山上穿著白紗跑來跑去,愛是三十年。』 -Quote from
@@ -108,7 +108,7 @@ const Landing = memo(() => {
 										/>
 									</div>
 								</Collapse>
-								<Collapse height={['435px', '434px', '344px', '344px'][width]}>
+								<Collapse height={['435px', '434px', '344px', '344px'][width]} symbol index={1}>
 									<h1>彩虹蛋糕</h1>
 									<p>
 										#LoveWins
