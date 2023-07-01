@@ -1,0 +1,17 @@
+.LoadingProcess {
+	.angle {
+		position: relative;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+		margin-left: 60px;
+
+		@scale: 0.7;
+		@img: './img/symbol-0.png';
+	}
+
+	.swing {
+		animation: r30_8 10s ease-in-out infinite;
+	}
+}

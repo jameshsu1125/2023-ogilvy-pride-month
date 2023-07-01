@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import OnloadProvider from 'lesca-react-onload';
-import { memo, useEffect, useState } from 'react';
+import { memo, useContext, useEffect, useState } from 'react';
 import Blockquote from '../../components/blockquote';
 import Body from '../../components/body';
 import Collapse from '../../components/collapse';
@@ -10,8 +10,12 @@ import Section from '../../components/section';
 import { LandingContext, LandingSteps } from './config';
 import './index.less';
 import { AudioPlayer } from './misc';
+import { Context } from '../../settings/config';
+import { ACTION } from '../../settings/constant';
 
 const Landing = memo(() => {
+	const [, setContext] = useContext(Context);
+
 	const value = useState(LandingSteps);
 	const [, setState] = value;
 	const [width, setWidth] = useState(0);
@@ -26,18 +30,29 @@ const Landing = memo(() => {
 		};
 		resize();
 		window.addEventListener('resize', resize);
+		setContext({
+			type: ACTION.LoadingProcess,
+			state: {
+				enabled: true,
+				onEnd: () => {
+					setState((S) => ({ ...S, steps: LandingSteps.fadeIn }));
+				},
+			},
+		});
 		return () => window.removeEventListener('resize', resize);
 	}, []);
 
 	useEffect(() => {
-		// console.log(width);
+		console.log(width);
 	}, [width]);
 
 	return (
 		<LandingContext.Provider value={value}>
 			<OnloadProvider
 				onload={() => {
-					setState((S) => ({ ...S, steps: LandingSteps.fadeIn }));
+					setTimeout(() => {
+						setContext({ type: ACTION.LoadingProcess, state: { fadeOut: true } });
+					}, 3000);
 				}}
 			>
 				<div className='Landing'>
