@@ -3,7 +3,7 @@
 .Header {
 	position: absolute;
 	top: 0;
-	padding-bottom: 300px;
+	padding-bottom: 500px;
 	width: 100%;
 	z-index: 2;
 
@@ -57,8 +57,25 @@
 
 @media only screen and (max-width: @SM) {
 	.Header {
-		padding-bottom: (unit(image-height(@img) / unit(image-width(@img))) * 100%);
+		// padding-bottom: 500px;
+
 		& > div {
+			.context {
+				@apply space-y-7;
+				.logo {
+					margin-top: 20px;
+					width: image-width(@img) * @scale;
+					height: image-height(@img) * @scale;
+
+					@scale: 1;
+					@img: './img/logo.svg';
+				}
+
+				.hashtag {
+					@apply text-6xl;
+				}
+			}
+
 			&::before {
 				height: 100%;
 			}

@@ -230,7 +230,7 @@
 
 		&::before {
 			position: absolute;
-			left: 20px;
+			left: 0;
 			top: 0;
 			width: image-width(@img) * @scale;
 			height: 100%;
@@ -307,11 +307,16 @@
 			}
 
 			.ribbon-l {
-				display: none;
+				// display: none;
+
+				& > div:nth-child(4) {
+					display: none;
+				}
 			}
 
 			.ribbon-r {
-				display: none;
+				right: -350px;
+				// display: none;
 			}
 		}
 	}

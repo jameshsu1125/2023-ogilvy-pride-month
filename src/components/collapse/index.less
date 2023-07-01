@@ -1,8 +1,50 @@
+@import url('../../settings/config.less');
+
 .Collapse {
 	width: 100%;
 
 	overflow: hidden;
 
-	.button {
+	button {
+		// transition: 0.2s;
+		@apply flex flex-col items-center justify-center py-2 text-lg text-white hover:text-primary;
+
+		& > div {
+			// transition: 0.2s;
+			width: image-width(@img) * @scale;
+			height: image-height(@img) * @scale;
+			mask-image: url(@img);
+			mask-size: 100%;
+			background-color: #fff;
+			margin-top: 0px;
+
+			@scale: 1.5;
+			@img: './img/more.svg';
+		}
+
+		&:hover {
+			& > div {
+				// transform: translateY(5px);
+				@apply bg-primary;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: @SM) {
+	.Collapse {
+		button {
+			@apply text-2xl;
+
+			& > div {
+				width: image-width(@img) * @scale;
+				height: image-height(@img) * @scale;
+
+				margin-top: 2px;
+
+				@scale: 2.5;
+				@img: './img/more.svg';
+			}
+		}
 	}
 }

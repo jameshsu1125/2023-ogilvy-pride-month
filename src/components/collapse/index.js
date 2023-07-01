@@ -15,13 +15,10 @@ const Collapse = ({ children, height = '315px' }) => {
 				{children}
 			</div>
 			{!state && (
-				<div className='flex w-full justify-end'>
-					<button
-						type='button'
-						className='py-2 text-primary hover:text-secondary'
-						onClick={() => setState(true)}
-					>
-						...顯示更多
+				<div className='mt-3 flex w-full justify-center md:mt-2'>
+					<button type='button' onClick={() => setState(true)}>
+						顯示更多
+						<div />
 					</button>
 				</div>
 			)}
