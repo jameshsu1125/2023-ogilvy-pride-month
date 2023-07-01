@@ -33,7 +33,6 @@ const Landing = memo(() => {
 		setContext({
 			type: ACTION.LoadingProcess,
 			state: {
-				enabled: true,
 				onEnd: () => {
 					setState((S) => ({ ...S, steps: LandingSteps.fadeIn }));
 				},
