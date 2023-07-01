@@ -30,7 +30,7 @@ const Landing = memo(() => {
 	}, []);
 
 	useEffect(() => {
-		console.log(width);
+		// console.log(width);
 	}, [width]);
 
 	return (
