@@ -25,7 +25,7 @@ const Landing = memo(() => {
 			const { innerWidth } = window;
 			if (innerWidth <= 768) setWidth(0);
 			else if (innerWidth > 768 && innerWidth <= 1024) setWidth(1);
-			else if (innerWidth > 1024) setWidth(2);
+			else if (innerWidth > 1024 && innerWidth <= 1280) setWidth(2);
 			else setWidth(3);
 		};
 		resize();
@@ -77,7 +77,7 @@ const Landing = memo(() => {
 									</p>
 								</Collapse>
 								<Blockquote>#LovelsLove</Blockquote>
-								<Collapse height={['431px', '467px', '385px', '372px'][width]}>
+								<Collapse height={['431px', '467px', '385px', '385px'][width]}>
 									<h1>他他篇</h1>
 									<p>
 										『愛不是花一天時間在海邊山上穿著白紗跑來跑去,愛是三十年。』 -Quote from
@@ -99,8 +99,8 @@ const Landing = memo(() => {
 									/>
 									<div className='ytPlayer'>
 										<iframe
-											width='560'
-											height='315'
+											width={['504', '268', '410', '528'][width]}
+											height={['284', '151', '231', '297'][width]}
 											src='https://www.youtube.com/embed/wSlXra0fJuU?controls=0'
 											title='YouTube video player'
 											allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
@@ -126,8 +126,8 @@ const Landing = memo(() => {
 									/>
 									<div className='ytPlayer'>
 										<iframe
-											width='560'
-											height='315'
+											width={['504', '268', '410', '528'][width]}
+											height={['284', '151', '231', '297'][width]}
 											src='https://www.youtube.com/embed/O1gh0ieTsws?controls=0'
 											title='YouTube video player'
 											allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
