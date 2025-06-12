@@ -8,7 +8,7 @@ const Header = memo(() => {
 			<div>
 				<div className='context'>
 					<div className='logo' />
-					<div className='hashtag'>#PRIDE2023</div>
+					<div className='hashtag'>#Pride Month</div>
 				</div>
 			</div>
 		</div>

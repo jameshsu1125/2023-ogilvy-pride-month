@@ -7,11 +7,11 @@ import Collapse from '../../components/collapse';
 import Container from '../../components/container';
 import Header from '../../components/header';
 import Section from '../../components/section';
+import { Context } from '../../settings/config';
+import { ACTION } from '../../settings/constant';
 import { LandingContext, LandingSteps } from './config';
 import './index.less';
 import { AudioPlayer } from './misc';
-import { Context } from '../../settings/config';
-import { ACTION } from '../../settings/constant';
 
 const Landing = memo(() => {
 	const [, setContext] = useContext(Context);
@@ -61,8 +61,8 @@ const Landing = memo(() => {
 							<Section>
 								<Collapse height={['200px', '346px', '200px', '200px'][width]}>
 									<p>
-										在台灣奧美，Ogilvy
-										#Pride2023不僅是一種價值觀的展示，更有別於其他辦公室的是，我們用2支影片真真實實地參與了『婚姻平權法』這場運動，甚至扮演了推波助瀾的角色。
+										在台灣奧美，Ogilvy #Pride
+										Month不僅是一種價值觀的展示，更有別於其他辦公室的是，我們用2支影片真真實實地參與了『婚姻平權法』這場運動，甚至扮演了推波助瀾的角色。
 									</p>
 									<p>
 										2019/5/24
